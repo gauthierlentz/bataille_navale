@@ -1,0 +1,65 @@
+algo bataille_navale
+CONST
+	effectif <- 5
+
+	type cells = enregistrement
+					i,j:entier;
+fin;
+
+type bateau = enregistrement
+				tabbateau : tableau [1..max] de cells
+fin;
+
+type flotte = enregistrement
+				tabflotte : tableau [1..max] de bateau
+fin;
+--------------------------------------------------------------------------------------------------------------------------------------------------
+procedure creacells (var P1:placement; var effectif:entier; T1:tableau);
+
+var
+	i:car;
+	j:entier;
+Debut
+	POUR i <- 1 JUSQU'A Effectif FAIRE
+		Debut
+			LIRE(T1[i].P1);
+		fin;
+	POUR j <- 1 JUSQU'A Effectif FAIRE
+		debut	
+			LIRE(T1[j].P1)
+		fin;
+		LIRE;
+fin;
+-------------------------------------------------------------------------------------------------------------------------------------------------
+procedure creabateau (var tabbateau: tableau; var tabflotte:tableau ; var T1:tableau)
+
+var
+	i:car
+	j:entier
+	max:entier
+
+debut
+	ECRIRE('Combien voulez vous de bateaux ?')
+	LIRE(max)
+	POUR tabflotte[1] JUSQU'A tabflotte[max] FAIRE
+		POUR tabbateau[1] JUSQU'A tabbateau[max] FAIRE
+			ECRIRE('Ou voulez vous positionner votre bateau ?')
+			LIRE(T1[i])
+			LIRE(T1[j])
+fin;
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+procedure comparaison ()
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------
+Var 
+	i,p1:entier;
+	T1: tableau [1..effectif] de entier
+	element:flotte;
+
+DEBUT
+	Place(P1,effectif,T1)
+	element.tabflotte[1].tabbateau[1].i <- 1
+
+LIRE;
+FIN.
