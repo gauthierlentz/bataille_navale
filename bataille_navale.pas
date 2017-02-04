@@ -2,19 +2,19 @@ Program bataille_navale;
 uses crt;
 CONST
 	Effectif=5;
-type cells = record
+type cells = record													//enregistrement pour les cases
 				i,j:integer;
 end;
 
 type bateau = record
-				tabbateau : array[1..max] of cells
+				tabbateau : array[1..effectif] of cells					// enregistrement pour les bateaux
 end;
 
 type flotte = record
-				tabflotte : array[1..max] of bateau
+				tabflotte : array[1..effectif] of bateau					// enregistrement pour la flotte
 end;
---------------------------------------------------------------------------------------------------------------------------------------------------
-procedure creacells (var P1:placement; var effectif:integer; T1:tableau);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+procedure creacells (var cells:record; var effectif:integer; T1:tableau); 		// procedure de crétation de cases
 
 var
 	i:char;
@@ -30,8 +30,8 @@ Begin
 		end;
 		readln;
 end;
--------------------------------------------------------------------------------------------------------------------------------------------------
-procedure creabateau (var tabbateau: array; var tabflotte:array ; var T1:array)
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+procedure creabateau (var tabbateau: array; var tabflotte:array ; var T1:array)		//procedure de création de bateaux
 
 var
 	i:char
@@ -47,17 +47,16 @@ begin
 			readln(T1[i])
 			readln(T1[j])
 end;
------------------------------------------------------------------------------------------------------------------------------------------------------
-procedure comparaison ()
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+procedure comparaison ()								// procédure de création entre deux cases
 
 
-------------------------------------------------------------------------------------------------------------------------------------------------
 Var 
 	i,p1:integer;
 	T1: array [1..effectif] of integer
 	element:flotte;
-
-Begin
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Begin													//programme principal
 	Place(P1,effectif,T1)
 	element.tabflotte[1].tabbateau[1].i=1
 
